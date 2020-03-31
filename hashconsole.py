@@ -2,9 +2,9 @@ import hashlib
 import os
 
 BLOCKSIZE = 65536
-funcoes = [ x for x in hashlib.algorithms_available ]
+funcoes = [ x for x in hashlib.algorithms_guaranteed]
 
-arquivo = "/home/ubrito/gui.py" #input("Informe o caminho do arquivo que deseja obter o hash:\n  >>> ")
+arquivo = input("Informe o caminho do arquivo que deseja obter o hash:\n  >>> ")
 
 while not os.path.isfile(arquivo):
     arquivo = input("\nArquivo não encontrado no caminho digitado!!\nInforme o caminho do arquivo que deseja obter o hash:\n  >>> ")
@@ -29,7 +29,23 @@ try:
 except:
     print("Houve algum problema!")
 
-print("Função - {}".format(funcoes[funcao-1]))
-print(hash.digest_size)
-print(hash.block_size)
-print(hash.hexdigest())
+tamanho = 132
+print("")
+print("".center(tamanho,"="))
+print("ARQUIVO".center(tamanho))
+print("".center(tamanho,"-"))
+print(arquivo.center(tamanho))
+print("".center(tamanho,"="))
+print("FUNÇÃO".center(44), end="")
+print("DIGEST SIZE".center(44), end="")
+print("BLOCK SIZE".center(44))
+print("".center(tamanho,"-"))
+print(funcoes[funcao-1].center(44), end="")
+print(str(hash.digest_size).center(44), end="")
+print(str(hash.block_size).center(44))
+print("".center(tamanho,"="))
+print("HASH".center(tamanho))
+print("".center(tamanho,"-"))
+print(hash.hexdigest().center(tamanho))
+print("".center(tamanho,"="))
+print("")
