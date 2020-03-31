@@ -29,23 +29,30 @@ try:
 except:
     print("Houve algum problema!")
 
-tamanho = 132
+
+hash_final = hash.hexdigest()
+
+if len(hash_final) > len(arquivo):
+    tamanho = len(hash_final) + 4
+else:
+    tamanho = len(arquivo) + 4
+
 print("")
 print("".center(tamanho,"="))
 print("ARQUIVO".center(tamanho))
 print("".center(tamanho,"-"))
 print(arquivo.center(tamanho))
 print("".center(tamanho,"="))
-print("FUNÇÃO".center(44), end="")
-print("DIGEST SIZE".center(44), end="")
-print("BLOCK SIZE".center(44))
+print("FUNÇÃO".center(int(tamanho/3)), end="")
+print("DIGEST SIZE".center(int(tamanho/3)), end="")
+print("BLOCK SIZE".center(int(tamanho/3)))
 print("".center(tamanho,"-"))
-print(funcoes[funcao-1].center(44), end="")
-print(str(hash.digest_size).center(44), end="")
-print(str(hash.block_size).center(44))
+print(funcoes[funcao-1].center(int(tamanho/3)), end="")
+print(str(hash.digest_size).center(int(tamanho/3)), end="")
+print(str(hash.block_size).center(int(tamanho/3)))
 print("".center(tamanho,"="))
 print("HASH".center(tamanho))
 print("".center(tamanho,"-"))
-print(hash.hexdigest().center(tamanho))
+print(hash_final.center(tamanho))
 print("".center(tamanho,"="))
 print("")
