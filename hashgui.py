@@ -108,7 +108,7 @@ class Tela(QMainWindow):
         self.lb_digest.resize(210, 30)
         self.lb_digest.setAlignment(Qt.AlignCenter)
 
-        self.lb_func_result = QLabel("Função", self)
+        self.lb_func_result = QLabel(self)
         self.lb_func_result.move(0, 244)
         self.lb_func_result.resize(210, 30)
         self.lb_func_result.setAlignment(Qt.AlignCenter)
@@ -135,7 +135,7 @@ class Tela(QMainWindow):
 
         self.lb_hash_result = QLabel(self)
         self.lb_hash_result.move(10, 324)
-        self.lb_hash_result.resize(2000, 30)
+        self.lb_hash_result.resize(610, 30)
         self.lb_hash_result.setAlignment(Qt.AlignCenter)
 
 
